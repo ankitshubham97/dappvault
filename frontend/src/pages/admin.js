@@ -70,9 +70,9 @@ class Admin extends Component {
         <div className="navbar navbar-dark bg-warning fixed-top">
           <div className="container py-2">
             <a href="/" className="navbar-brand">
-              Fanstop Demo
+              Dappvault Demo
             </a> 
-            <a href="https://github.com/ankitshubham97/fanstop">
+            <a href="https://github.com/ankitshubham97/dappvault">
               <img src="github-logo-6531.png" alt="public-address" className="ml-2" />
             </a>
           </div>

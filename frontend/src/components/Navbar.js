@@ -1,5 +1,6 @@
 import { getAccessToken, removeAccessToken } from "../utils/rest";
-import { connectWallet, disconnectWallet, getAccount, signPayload } from "../utils/wallet";
+import { /* connectWallet,*/ disconnectWallet, getAccount, signPayload } from "../utils/wallet";
+import { connectWallet } from "../utils/connectWallet";
 
 const Navbar = (props) => {
   const  {
@@ -13,12 +14,11 @@ const Navbar = (props) => {
   } = props;
 
   const onConnectWallet = async () => {
-    await connectWallet();
-    const account = await getAccount();
-    setAccount(JSON.stringify(account));
+    const { address, message, signature} = await connectWallet();
+    console.log(address, message, signature);
+    setAccount(address);
     setContentUri('');
-    const signature = await signPayload();
-    const {accessToken, error} = await getAccessToken({signature, ...account});
+    const {accessToken, error} = await getAccessToken({signature, walletPublicAddress:address});
     if (error) {
       setError(error);
     }
@@ -37,37 +37,26 @@ const Navbar = (props) => {
     console.log(resp);
   };
 
-  const getPublicAddressFromAccount = () => {
-    if (account === "") {
-      return "";
-    }
-    const publicAddr = JSON.parse(account)?.walletPublicAddress;
-    if (publicAddr) {
-      return publicAddr;
-    }
-    return "";
-  }
-
   return (
     <div className="navbar navbar-dark bg-warning fixed-top">
       <div className="container py-2">
         <a href="/" className="navbar-brand">
-          Fanstop Demo
+          Dappvault Demo
         </a> 
-        <a href="https://github.com/ankitshubham97/fanstop">
+        <a href="https://github.com/ankitshubham97/dappvault">
           <img src="github-logo-6531.png" alt="public-address" className="ml-2" />
         </a>
         <div className="d-flex">
           {(() => {
-            const publicAddr = getPublicAddressFromAccount();
+            const publicAddr = account;
             if (publicAddr && publicAddr !== "") {
-              return <button className="btn btn-outline-secondary" disabled>Connected to ${publicAddr}</button>;
+              return <button className="btn btn-outline-secondary" disabled>Connected to {publicAddr}</button>;
             }
             return <button onClick={onConnectWallet} className="btn btn-outline-success"> Connect Wallet </button>;
           })()}
           &nbsp;
           {(() => {
-            const publicAddr = getPublicAddressFromAccount();
+            const publicAddr = account;
             if (publicAddr && publicAddr !== "") {
               return <button onClick={ondisconnectWallet} className="btn btn-outline-danger">Disconnect</button>;
             }

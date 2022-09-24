@@ -38,7 +38,7 @@ class App {
       })
     );
     this.app.use(fileUpload());
-    this.app.use(cors({origin: ['http://localhost:3001', 'https://fanstop-frontend.vercel.app'], credentials: true}));
+    this.app.use(cors({origin: ['http://localhost:3001', 'https://dappvault-frontend.vercel.app'], credentials: true}));
   }
 
   private initializeControllers(controllers: readonly Controller[]) {

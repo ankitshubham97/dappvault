@@ -3,7 +3,7 @@ import { SigningType } from "@airgap/beacon-sdk";
 import { STRING_NONCE } from "../constants";
 
 export const wallet = new BeaconWallet({
-  name: "Fanstop Demo",
+  name: "Dappvault Demo",
   preferredNetwork: "jakartanet",
 });
 

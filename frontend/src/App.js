@@ -59,7 +59,7 @@ const App = () => {
     setContent(item);
     if (!(accessToken && accessToken.length>0)) {
       setContentUri("")
-      alert('Looks like either you are disconnected or connected with a wallet that does not contain a Fanstop NFT!')
+      alert('Looks like either you are disconnected or connected with a wallet that does not contain a Dappvault NFT!')
     }
   }
 
@@ -101,11 +101,11 @@ const App = () => {
                                     (
                                       <div style={{ height: "400px", paddingTop: "100px"}}>
                                         <p className="fw-normal" >
-                                          Please connect your wallet and if you have one of the Fanstop NFTs in them, then only you would be able to view my content!
+                                          Please connect your wallet and if you have one of the Dappvault NFTs in them, then only you would be able to view my content!
                                           <br></br>
                                           The content are stored on IPFS and you can't access them even if I make their CIDs public!
                                           <br></br>
-                                          So, get a Fanstop NFT now to watch my NFT-exclusive content!
+                                          So, get a Dappvault NFT now to watch my NFT-exclusive content!
                                         </p>
                                         <p className="fw-bolder">
                                           If you are a judge/panelist of Data Dao Hackathon, then please follow this instructions <a href=''>here</a>!

@@ -1,14 +1,16 @@
 import axios from "axios";
 import { API_BASE_URL, PACKED_NONCE } from '../constants';
 
-export const getAccessToken = async ({signature, walletPublicKey, walletPublicAddress}) => {
+export const getAccessToken = async ({signature, walletPublicAddress}) => {
   try{
     const res = await axios.post(
-      `${API_BASE_URL}/token`, {
-        nonce: PACKED_NONCE,
+      `${API_BASE_URL}/token`, 
+      {
+        nonce: 'message',
         signature,
-        walletPublicKey,
         walletPublicAddress,
+        nftContractAddress: '0x8437ee943b49945a7270109277942defe30fac25',
+        nftId: '0',
       },
       {
         withCredentials: true,
