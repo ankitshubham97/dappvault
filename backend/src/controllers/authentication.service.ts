@@ -28,13 +28,7 @@ async function doesWalletOwnNft(
   return res;
 }
 
-async function doesWalletOwnEnoughMatic({walletPublicAddress}:{walletPublicAddress: string}): Promise<boolean> {
-  // https://api.covalenthq.com/v1/80001/address/0x5d905Cd5734A457139bc04c77CAAf3DFCBf0bA33/balances_v2/
-  // ?quote-currency=USD
-  // &format=JSON
-  // &nft=false
-  // &no-nft-fetch=false
-  // &key=ckey_76f55185b2c74744a2b87c39e93
+async function doesWalletQualify({walletPublicAddress}:{walletPublicAddress: string}): Promise<boolean> {
   const resp = await axios({
     method: 'get',
     url: `https://api.covalenthq.com/v1/80001/address/${walletPublicAddress}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=${process.env.COVALENT_API_KEY}`,
@@ -123,17 +117,9 @@ export default function AuthNft() {
             code: 400,
           };
         }
-        // Check if the wallet owns the NFT.
+        // Check if the wallet owns the NFT or has enough matic tokens.
         if (
-          // !(await doesWalletOwnNft(
-          //   _web3,
-          //   _deployedContractAbi,
-          //   _deployedContractAddress,
-          //   walletPublicAddress,
-          //   nftContractAddress,
-          //   nftId
-          // ))
-          !(await doesWalletOwnEnoughMatic({walletPublicAddress}))
+          !(await doesWalletQualify({walletPublicAddress}))
         ) {
           return {
             data: {
