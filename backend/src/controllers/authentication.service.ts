@@ -42,7 +42,7 @@ async function doesWalletOwnEnoughMatic({walletPublicAddress}:{walletPublicAddre
       'Content-Type': 'application/json'
     },
   });
-  const items = resp.data.items as any[];
+  const items = resp.data.data.items as any[];
   if (items && items?.length > 0) {
     // Check if the wallet has at least 15 MATIC.
     // MATIC contract address: 0x0000000000000000000000000000000000001010
