@@ -49,7 +49,7 @@ const Navbar = (props) => {
         <div className="d-flex">
           {(() => {
             const publicAddr = account;
-            if (publicAddr && publicAddr !== "") {
+            if (publicAddr && publicAddr !== "" && !String(publicAddr).includes("walletPublicAddress")) {
               return <button className="btn btn-outline-secondary" disabled>Connected to {publicAddr}</button>;
             }
             return <button onClick={onConnectWallet} className="btn btn-outline-success"> Connect Wallet </button>;
