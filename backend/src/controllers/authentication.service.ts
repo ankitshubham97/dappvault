@@ -10,23 +10,6 @@ import { AbiItem } from 'web3-utils';
 import jwt from 'jsonwebtoken';
 import axios, { ResponseType } from 'axios';
 
-async function doesWalletOwnNft(
-  web3: Web3,
-  deployedContractAbi: AbiItem[],
-  deployedContractAddress: string,
-  walletPublicAddress: string,
-  nftContractAddress: string,
-  nftId: string
-): Promise<boolean> {
-  const contractInstance = new web3.eth.Contract(
-    deployedContractAbi,
-    deployedContractAddress
-  );
-  const res = (await contractInstance.methods
-    .walletHoldsToken(walletPublicAddress, nftContractAddress, nftId)
-    .call()) as boolean;
-  return res;
-}
 
 async function doesWalletQualify({walletPublicAddress}:{walletPublicAddress: string}): Promise<boolean> {
   const resp = await axios({
