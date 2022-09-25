@@ -109,6 +109,9 @@ const App = () => {
                                         <p className="fw-bolder">
                                           If you are a judge/panelist of Ethonline Hackathon, then please follow this instructions <a href='https://github.com/ankitshubham97/dappvault#ethonline-hackathon-2022'>here</a>!
                                         </p>
+                                        <p className="fw-bolder">
+                                          <a href='https://dappvault-frontend.vercel.app/admin'>Link to admin interface</a>!
+                                        </p>
                                        
                                       </div>
                                     )
