@@ -101,14 +101,13 @@ const App = () => {
                                     (
                                       <div style={{ height: "400px", paddingTop: "100px"}}>
                                         <p className="fw-normal" >
-                                          Please connect your wallet and if you have one of the Dappvault NFTs in them, then only you would be able to view my content!
+                                          Please connect your metamask wallet and if you have <a href='https://mumbai.polygonscan.com/address/0x8437ee943b49945a7270109277942defe30fac25'>one of the Correct NFTs</a> or more than 15 MATIC testnet tokens in them, then only you would be able to view the sensitive files!
                                           <br></br>
-                                          The content are stored on IPFS and you can't access them even if I make their CIDs public!
+                                          The files are stored on IPFS and you can't access them even if I make their CIDs public!
                                           <br></br>
-                                          So, get a Dappvault NFT now to watch my NFT-exclusive content!
                                         </p>
                                         <p className="fw-bolder">
-                                          If you are a judge/panelist of Data Dao Hackathon, then please follow this instructions <a href=''>here</a>!
+                                          If you are a judge/panelist of Ethonline Hackathon, then please follow this instructions <a href='https://github.com/ankitshubham97/dappvault#ethonline-hackathon-2022'>here</a>!
                                         </p>
                                        
                                       </div>
