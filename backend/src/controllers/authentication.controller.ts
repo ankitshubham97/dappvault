@@ -1,4 +1,4 @@
-import AuthNft, { GetTokenResponseSuccess } from 'authnft';
+import AuthNft, { GetTokenResponseSuccess } from './authentication.service';
 import axios, { ResponseType } from 'axios';
 import FormData from 'form-data';
 import express from 'express';
