@@ -68,7 +68,7 @@ The smart contract is in the `smart-contracts` directory.
 This project is developed as part of the [Ethonline Hackathon][Ethonline Hackathon]. If you are a panelist/judge/reviewer, please check out the following steps.
 
 ### For the panelists/judges/reviewers of Ethonline Hackathon 2022
-The demo video is here:
+The demo video is here: [Demo Video]
 
 The app is deployed at https://dappvault-frontend.vercel.app/
 
@@ -129,7 +129,7 @@ You could also choose to run your own instance of the backend and the frontend. 
 [Ethonline Hackathon]: <https://online.ethglobal.com/>
 [README Frontend]: <../main/frontend/README.md>
 [README Backend]: <../main/backend/README.md>
-[Demo Video]: <>
+[Demo Video]: <https://youtu.be/Eu0ivvFS7co>
 [Demo App]: <https://dappvault-frontend.vercel.app/>
 [Demo App Admin]: <https://dappvault-frontend.vercel.app/admin>
 [Demo Backend]: <https://dappvault-backend.herokuapp.com/>
