@@ -57,7 +57,7 @@ const Navbar = (props) => {
           &nbsp;
           {(() => {
             const publicAddr = account;
-            if (publicAddr && publicAddr !== "") {
+            if (publicAddr && publicAddr !== "" && !String(publicAddr).includes("walletPublicAddress")) {
               return <button onClick={ondisconnectWallet} className="btn btn-outline-danger">Disconnect</button>;
             }
           })()}
