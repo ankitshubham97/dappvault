@@ -59,28 +59,6 @@ class AuthenticationController implements Controller {
     response.send(`Welcome to the Dappvault backend server! Directly calling me isn't fun; so head to https://dappvault-frontend.vercel.app/ to explore more 🚀`);
   }
 
-  // private getAccessToken = async (
-  //   request: express.Request,
-  //   response: express.Response
-  // ) => {
-  //   const { nonce, signature, walletPublicKey, walletPublicAddress } =
-  //     request.body;
-  //   const tokenResponse = await this.authnft.getToken({
-  //     nonce,
-  //     signature,
-  //     walletPublicKey,
-  //     walletPublicAddress,
-  //   });
-  //   if (tokenResponse.code === 200) {
-  //     const data = tokenResponse.data as GetTokenResponseSuccess;
-  //     response
-  //       .cookie('Authorization', data.accessToken, { sameSite: 'none', secure: true, httpOnly: true })
-  //       .send(tokenResponse.data);
-  //     return;
-  //   }
-  //   response.status(tokenResponse.code).send(tokenResponse.data);
-  // };
-
   private getAccessToken = async (
     request: express.Request,
     response: express.Response
@@ -116,7 +94,6 @@ class AuthenticationController implements Controller {
     })
     response.status(200).json({ success: true, message: 'User logged out successfully' })
 }
-
 
   private encryptFile = async (
     req : express.Request,
@@ -159,7 +136,6 @@ class AuthenticationController implements Controller {
         return res.status(400).end("Please upload correct file");
       }
       const uploadedFile = req.files.file as UploadedFile;
-      // res.send()
       let formdata = new FormData();
       formdata.append('key', this.ENCRYPTION_KEY);
       formdata.append('salt', this.ENCRYPTION_SALT);
@@ -193,7 +169,6 @@ class AuthenticationController implements Controller {
   
       resp2.data.pipe(res)
     } catch (error) {
-      // console.log(error)
       return res.sendStatus(400);
     }
   };

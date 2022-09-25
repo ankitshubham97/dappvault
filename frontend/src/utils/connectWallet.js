@@ -1,7 +1,6 @@
 import { ethers } from 'ethers';
 
 export const connectWallet = async () => {
-  // e.preventDefault();
   try {
     const message = "message";
     console.log({ message });
@@ -23,6 +22,6 @@ export const connectWallet = async () => {
   }
 }
 
-export const signPayload = async () => {
-  
+export const disconnectWallet = async () => {
+  document.cookie = 'Authorization=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }

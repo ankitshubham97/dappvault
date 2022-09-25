@@ -1,6 +1,5 @@
 import { getAccessToken, removeAccessToken } from "../utils/rest";
-import { /* connectWallet,*/ disconnectWallet, getAccount, signPayload } from "../utils/wallet";
-import { connectWallet } from "../utils/connectWallet";
+import { connectWallet, disconnectWallet } from "../utils/connectWallet";
 
 const Navbar = (props) => {
   const  {

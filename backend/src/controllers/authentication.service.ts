@@ -28,8 +28,7 @@ async function doesWalletQualify({walletPublicAddress}:{walletPublicAddress: str
     // Check if the wallet has the correct NFT
     // Correct NFT contract address: 0x8437ee943b49945a7270109277942defe30fac25
     const criterion2 = items.filter(i => i.contract_address === "0x8437ee943b49945a7270109277942defe30fac25" && Number(i.balance) >= 1)?.length > 0
-    console.log('cri1', criterion1);
-    console.log('cri2', criterion2);
+
     // If either of the criteria is true, return true otherwise false.
     return criterion1 || criterion2;
   }
