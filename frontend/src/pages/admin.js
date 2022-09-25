@@ -87,7 +87,7 @@ class Admin extends Component {
                       <center>
                           <div style={{ height: "400px", paddingTop: "100px"}}>
                             <p className="fw-bold">
-                              Upload your new content to IPFS with encryption now!
+                              Upload file to IPFS with encryption now!
                             </p>
                             <div>
                               <input type="file" onChange={this.onFileChange} />
